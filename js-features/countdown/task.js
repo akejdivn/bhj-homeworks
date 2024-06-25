@@ -1,5 +1,5 @@
 const timer = document.getElementById('timer');
-let time = 5;
+let time = 59;
 
 
 
