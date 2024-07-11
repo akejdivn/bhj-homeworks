@@ -1,3 +1,4 @@
+let thisGlobal = this;
 class Game {
   constructor(container) {
     this.container = container;
@@ -16,7 +17,18 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
+
   registerEvents() {
+    const current = this.currentSymbol.textContent  
+    function onkey(e){
+      if(current === e.key){
+        this.success()
+      } else {
+        this.fail();
+      }
+      document.addEventListener('keydown', onkey)
+     
+      }
     /*
       TODO:
       Написать обработчик события, который откликается
