@@ -1,18 +1,22 @@
-const text = Array.from(document.querySelectorAll('.rotator__case'))
-text.forEach(e=>{
-    if(e.classList.contains('rotator__case_active')){ {
-        setInterval(function(){
-            if(e.classList.contains('rotator__case_active')){
-                e.classList.remove('rotator__case_active')
-                e.nextElementSibling.classList.add('rotator__case_active')}
-                else if(e.nextElementSibling === null){
-                    e.firstChild.classList.add('rotator__case_active')
-                }
-                },1000)
-                }
-            }
+
+
+const text = Array.from(document.getElementsByClassName('rotator__case'))
+for(let i = 0; i < text.length; i++){
+    let textActive = text.findIndex(text => text.classList.contains('rotator__case_active'))
+    setInterval(()=>{
+        if(textActive === text.length){
+            textActive = 0
+            text[textActive].classList.add('rotator__case_active')
+        }
+       else{
+       textActive++
+        text[textActive - 1].classList.remove('rotator__case_active')
+        text[textActive].classList.add('rotator__case_active')
+       }
+    }, 1000)
 }
-)
+
+
     
 
 
