@@ -9,7 +9,6 @@ dropdownValue.onclick = function(){
   dropdownItems.forEach(i => {
     i.onclick = function(){
     dropdownValue.innerHTML = i.textContent
-    console.log('smvmv')
     dropdownList.classList.toggle('dropdown__list_active')
     return false
     }
